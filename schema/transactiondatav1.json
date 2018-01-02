@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Transaction V1",
+  "description": "A transaction on the blockchain.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "The unique identifier of the transaction.",
+      "type": "string"
+    },
+    "from": {
+      "description": "Value is transferred from this address.",
+      "type": "string"
+    },
+    "to": {
+      "description": "Value is transferred to this address.",
+      "type": "string"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Value to be transferred."
+    }
+  },
+  "required": ["id", "from", "to", "amount"]
+}
