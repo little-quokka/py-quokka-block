@@ -238,11 +238,7 @@ class Node:
             )
         )
 
-        # TODO Update blockchain
-        # TODO validate json schemas
-        # TODO keep information about nodes (locally within node)
-        # TODO chainbase
-        # TODO proof-of-work
+        # TODO actually update blockchain
 
     #
     # -> respond to queries from other nodes

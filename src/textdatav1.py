@@ -1,3 +1,4 @@
+import hashlib
 import uuid
 
 from textdata import TextData
@@ -22,21 +23,21 @@ class TextDataV1(TextData):
 
     @property
     def hash(self):
-        return self._hash
+        return self._root_hash
 
     def __init__(self, data):
-        # specific to TextDataV1
-        if isinstance(data, str):
-            self._data = data
-        else:
-            raise Exception("Provided data is not a string.")
-
-        # for every AbstractDataPackage
         self._type = "TextData"
         self._version = 1
         self._nonce = uuid.uuid4().hex
+        self._data = data
+        self._root_hash = self._hash()
 
-        self._hash = self._hash()
+    def _hash(self):
+        encoding = 'utf-8'
+        sha256 = hashlib.sha256()
+        sha256.update(str(self.nonce).encode(encoding))
+        sha256.update(str(self.data).encode(encoding))
+        return sha256.hexdigest()
 
     def json_dict(self):
         return {

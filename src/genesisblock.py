@@ -6,7 +6,7 @@ from textdatav1 import TextDataV1
 
 class GenesisBlock(AbstractBlock):
     @property
-    def index(self):
+    def id(self):
         return self._index
 
     @property

@@ -1,0 +1,17 @@
+Description:
+------------
+
+id:     Unique transaction id within block. Globally unique by prepending the block id.
+from:   Wallet address sender
+to:     Wallet address recipient
+amount: Amount of blockchain native currency
+
+Example:
+--------
+
+{
+  "id": 1,
+  "from": "2284e200fac0453698a6e0baf032e888",
+  "to": "a4f27431afe2426f90bf03061d979cbb",
+  "amount": 1.25
+}
